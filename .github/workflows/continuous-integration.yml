@@ -41,7 +41,7 @@ jobs:
             compile
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: target-cache
           path: |
@@ -60,7 +60,7 @@ jobs:
           submodules: true
 
       - name: Download
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: target-cache
           path: ${{github.workspace}}/target
@@ -101,7 +101,7 @@ jobs:
           cmake --install target/build/jni/
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: library-resources
           path: |
@@ -119,7 +119,7 @@ jobs:
           submodules: true
 
       - name: Download
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: target-cache
           path: ${{github.workspace}}/target
@@ -160,7 +160,7 @@ jobs:
           cmake --install target/build/jni/
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: library-resources
           path: |
@@ -179,7 +179,7 @@ jobs:
           submodules: true
 
       - name: Download
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: target-cache
           path: ${{github.workspace}}/target
@@ -649,12 +649,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: true
 
       - name: Download
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: target-cache
           path: ${{github.workspace}}/target
@@ -700,7 +700,7 @@ jobs:
             --config RelWithDebInfo
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: library-resources
           path: |
@@ -709,12 +709,7 @@ jobs:
 
   package:
     needs: [
-      compile-apple-arm64,
-      compile-apple-x86_64,
-      compile-linux-arm,
-      compile-linux-arm64,
-      compile-linux-x86,
-      compile-linux-x86_64,
+
       compile-windows-arm,
       compile-windows-x86,
       compile-windows-x86_64
