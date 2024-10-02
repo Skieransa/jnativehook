@@ -41,7 +41,7 @@ jobs:
             compile
 
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: target-cache
           path: |
@@ -60,7 +60,7 @@ jobs:
           submodules: true
 
       - name: Download
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: target-cache
           path: ${{github.workspace}}/target
