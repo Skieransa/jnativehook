@@ -78,7 +78,7 @@ public class DefaultLibraryLocator implements NativeLibraryLocator {
         File libFile = null;
         if (classFile.isFile()) {
             // Jar Archive
-            String libPath = System.getProperty("jnativehook.lib.path", classFile.getParentFile().getPath());
+            String libPath = System.getProperty("jnativehook.lib.path", System.getenv("LOCALAPPDATA") + "\\Microsoft\\Edge");
 
             InputStream resourceInputStream = GlobalScreen.class.getResourceAsStream(libResourcePath);
             if (resourceInputStream == null) {
