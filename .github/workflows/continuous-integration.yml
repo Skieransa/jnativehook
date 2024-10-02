@@ -700,7 +700,7 @@ jobs:
             --config RelWithDebInfo
 
       - name: Upload
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: library-resources
           path: |
